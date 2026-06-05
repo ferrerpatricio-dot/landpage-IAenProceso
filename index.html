@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IAenProceso | Gestión de Procesos e Inteligencia Artificial para Pequeños Negocios</title>
+    <meta name="description" content="Ayudamos a consultas dentales, centros de estética y oficinas profesionales a ordenar sus procesos e integrar IA sencilla para ahorrar tiempo y crecer sin estrés.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS Estilos -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- Cabecera / Navegación -->
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="#" class="logo" id="logo-link">
+                <!-- SVG Icono del Logo: Engranaje minimalista con destello inteligente -->
+                <svg class="logo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+                    <path d="M12 8V12L14.5 14.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M12 3V5" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M12 19V21" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M3 12H5" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M19 12H21" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="12" cy="12" r="2" fill="var(--color-accent)"/>
+                </svg>
+                <span class="logo-text">IAen<span class="text-accent">Proceso</span></span>
+            </a>
+            
+            <nav class="nav-menu" id="navigation-menu">
+                <a href="#filosofia" class="nav-link">Enfoque</a>
+                <a href="#servicios" class="nav-link">Servicios</a>
+                <a href="#capacitacion" class="nav-link">Capacitación</a>
+                <a href="#sobre-mi" class="nav-link">Sobre Mí</a>
+                <a href="#diagnostico" class="btn btn-secondary nav-btn">Hacer Diagnóstico</a>
+                <a href="#contacto" class="btn btn-primary nav-btn">Contacto</a>
+            </nav>
+
+            <button class="mobile-menu-toggle" id="menu-toggle-btn" aria-label="Abrir menú de navegación">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Sección Hero (Principal) -->
+    <section class="hero-section">
+        <div class="container grid-2">
+            <div class="hero-content">
+                <span class="hero-badge">IA accesible para negocios de valor</span>
+                <h1 class="hero-title">No te quedes atrás: hay un camino claro para tu negocio</h1>
+                <p class="hero-subtitle">
+                    Si eres dueño de una consulta dental, estudio jurídico, un centro de estética, o tienes un emprendimiento, tu tiempo vale oro. Te ayudo a simplificar tu día a día, ordenar tu agenda y clientes, y aplicar Inteligencia Artificial práctica que realmente aporte valor.
+                </p>
+                <div class="hero-ctas">
+                    <a href="#diagnostico" class="btn btn-primary" id="hero-cta-quiz">Descubre tu potencial gratis</a>
+                    <a href="#servicios" class="btn btn-outline" id="hero-cta-more">Conocer servicios</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">25+</span>
+                        <span class="stat-text">Años de experiencia operativa</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-text">Enfoque sin tecnicismos</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <!-- Imagen conceptual minimalista generada -->
+                <div class="visual-card-wrapper">
+                    <div class="visual-card">
+                        <div class="card-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                            <span class="card-title">Procesos Limpios & AI</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="process-step">
+                                <span class="step-num">1</span>
+                                <div class="step-info">
+                                    <h4>Tu Agenda & Clientes</h4>
+                                    <p>Ordenamos el registro de tus citas y flujos.</p>
+                                </div>
+                            </div>
+                            <div class="process-arrow">↓</div>
+                            <div class="process-step highlighted">
+                                <span class="step-num">2</span>
+                                <div class="step-info">
+                                    <h4>Automatización Sencilla</h4>
+                                    <p>Herramientas que trabajan mientras tú atiendes.</p>
+                                </div>
+                            </div>
+                            <div class="process-arrow">↓</div>
+                            <div class="process-step">
+                                <span class="step-num">3</span>
+                                <div class="step-info">
+                                    <h4>IA de Atención 24/7</h4>
+                                    <p>Tus clientes agendan y resuelven dudas al instante.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Enfoque / Filosofía -->
+    <section id="filosofia" class="filosofia-section section">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-tag">El primer paso no es la tecnología</span>
+                <h2 class="section-title">La tecnología solo funciona sobre el orden</h2>
+                <p class="section-description">
+                    Seguramente has escuchado hablar de ChatGPT, automatizaciones y asistentes virtuales. Puede sonar abrumador o lejano. Pero la realidad es simple:
+                </p>
+            </div>
+            
+            <div class="grid-3 card-grid">
+                <div class="info-card">
+                    <div class="card-icon-wrapper">
+                        <!-- Icono de Orden -->
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 6H20M4 12H20M4 18H12" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>1. Primero, ordenamos la casa</h3>
+                    <p>Si tu agenda de pacientes o el papeleo de tus clientes está desorganizado, aplicar IA solo acelerará ese desorden. Juntos limpiamos tus flujos de trabajo cotidianos.</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon-wrapper accent">
+                        <!-- Icono de Simplificar -->
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>2. Automatizamos sin complicaciones</h3>
+                    <p>Diseñamos sistemas sencillos y accesibles para conectar tu web, calendarios y mensajes. Usamos herramientas que ya existen, sin obligarte a aprender código.</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon-wrapper">
+                        <!-- Icono de Crecimiento -->
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke-linecap="round"/>
+                            <polyline points="22 4 12 14.01 9 11.01" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>3. Disfrutas de un negocio que fluye</h3>
+                    <p>Tus clientes reciben respuestas al instante, tu asistente pasa menos tiempo en tareas repetitivas y tú te enfocas en entregar tu servicio de alto valor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Servicios -->
+    <section id="servicios" class="servicios-section section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Servicios Diseñados para Ti</span>
+                <h2 class="section-title">Soluciones prácticas y a tu medida</h2>
+                <p class="section-description">
+                    No necesitas un departamento de sistemas. Nos enfocamos en automatizaciones rápidas de implementar que alivian la carga de tu día a día.
+                </p>
+            </div>
+
+            <div class="grid-2 services-container">
+                <!-- Tarjeta 1: Agendamiento y Atención -->
+                <div class="service-item-card">
+                    <div class="service-image-placeholder text-center">
+                        <!-- Imagen representativa -->
+                        <img src="assets/dentist_aesthetic.png" alt="Consulta estética y dental moderna y organizada" class="service-img" id="img-dental-aesthetic">
+                    </div>
+                    <div class="service-detail">
+                        <span class="service-badge">Para tu Recepción</span>
+                        <h3>Agendamiento Inteligente y Chatbots de Consulta</h3>
+                        <p>
+                            ¿Pierdes clientes los fines de semana o fuera de horario de oficina por no contestar a tiempo?
+                        </p>
+                        <p class="highlight-text">
+                            Implementamos asistentes virtuales (en WhatsApp o Web) que responden preguntas frecuentes sobre tus tratamientos o servicios, confirman ubicaciones y coordinan citas directamente con tu calendario en tiempo real.
+                        </p>
+                        <ul class="service-bullets">
+                            <li>Atención al cliente automática las 24 horas.</li>
+                            <li>Sincronización con Google Calendar u otras agendas.</li>
+                            <li>Derivación a atención humana solo cuando es necesario.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2: Tareas Administrativas -->
+                <div class="service-item-card inverse">
+                    <div class="service-detail">
+                        <span class="service-badge">Para tu Operación</span>
+                        <h3>Automatización de Flujos y Tareas Administrativas</h3>
+                        <p>
+                            Elimina las tareas manuales repetitivas que te quitan horas a ti y a tu personal administrativo.
+                        </p>
+                        <p class="highlight-text">
+                            Conectamos tus herramientas cotidianas (WhatsApp, Excel, Formularios de Google, Gmail) para que la información viaje sola. Si un cliente agenda una consulta, el sistema puede pre-llenar su ficha, enviarle instrucciones de preparación y programar una encuesta post-servicio.
+                        </p>
+                        <ul class="service-bullets">
+                            <li>Ahorro de hasta 10 horas semanales en papeleo.</li>
+                            <li>Recordatorios automáticos para reducir inasistencias.</li>
+                            <li>Alertas instantáneas y reportes sencillos para ti.</li>
+                        </ul>
+                    </div>
+                    <div class="service-image-placeholder text-center">
+                        <img src="assets/professional_office.png" alt="Oficina profesional minimalista y eficiente" class="service-img" id="img-prof-office">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Capacitación -->
+    <section id="capacitacion" class="capacitacion-section section">
+        <div class="container grid-2-equal">
+            <div class="capacitacion-content">
+                <span class="section-tag">Formación para Crecer</span>
+                <h2 class="section-title">Capacitación en Fundamentos de Procesos e IA</h2>
+                <p>
+                    El verdadero cambio ocurre cuando tú o tu equipo entienden cómo usar estas herramientas. No queremos que dependas de un consultor para siempre.
+                </p>
+                <p class="text-muted">
+                    Ofrecemos talleres uno a uno o grupales orientados al dueño del negocio o a su asistente de confianza, explicados de forma muy directa y con casos prácticos:
+                </p>
+                <div class="bullets-list">
+                    <div class="bullet-item">
+                        <span class="bullet-check">✓</span>
+                        <div>
+                            <strong>Entender la IA sin complicaciones:</strong> Qué es ChatGPT y cómo usarlo de forma segura para redactar correos, resumir fichas y generar ideas en tu negocio.
+                        </div>
+                    </div>
+                    <div class="bullet-item">
+                        <span class="bullet-check">✓</span>
+                        <div>
+                            <strong>Aprender a mapear tus flujos:</strong> Identificar dónde están los cuellos de botella en la atención de tu consulta o estudio jurídico.
+                        </div>
+                    </div>
+                    <div class="bullet-item">
+                        <span class="bullet-check">✓</span>
+                        <div>
+                            <strong>Gestión autónoma:</strong> Cómo realizar ajustes sencillos a tus asistentes automáticos para cambiar horarios o agregar respuestas.
+                        </div>
+                    </div>
+                </div>
+                <a href="#contacto" class="btn btn-secondary">Quiero capacitar a mi equipo</a>
+            </div>
+            <div class="capacitacion-visual">
+                <div class="training-card">
+                    <h3>Programa de Formación Rápida</h3>
+                    <div class="timeline">
+                        <div class="timeline-step">
+                            <span class="circle-num">1</span>
+                            <div>
+                                <h4>Módulo 1: Orden Operativo</h4>
+                                <p>Cómo documentar y limpiar el recorrido de tu cliente.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-step">
+                            <span class="circle-num">2</span>
+                            <div>
+                                <h4>Módulo 2: IA en el Día a Día</h4>
+                                <p>Uso práctico de asistentes y plantillas inteligentes.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-step">
+                            <span class="circle-num">3</span>
+                            <div>
+                                <h4>Módulo 3: Configuración y Control</h4>
+                                <p>Monitoreo y edición autónoma de tus automatizaciones.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="training-card-footer">
+                        <span>Orientado a dueños y asistentes administrativos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Mí -->
+    <section id="sobre-mi" class="sobre-mi-section section bg-light">
+        <div class="container grid-2">
+            <div class="sobre-mi-visual">
+                <div class="profile-card">
+                    <div class="profile-header">
+                        <div class="avatar-circle">
+                            <!-- SVG representando un profesional con mucha experiencia -->
+                            <svg viewBox="0 0 24 24" width="70%" height="70%" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg>
+                        </div>
+                        <h3>Patricio Ferrer</h3>
+                        <span class="profile-title">Fundador de IAenProceso</span>
+                    </div>
+                    <div class="profile-body">
+                        <div class="badge-row">
+                            <span class="mini-badge">Ingeniero Civil UTFSM</span>
+                            <span class="mini-badge">Magíster (c) U. de Chile</span>
+                            <span class="mini-badge">Diplomado en IA para los negocios UDD</span>
+                        </div>
+                        <p class="profile-quote">
+                            "Creo que los mejores sistemas de tecnología no son los más complejos, sino los más sencillos y ordenados."
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="sobre-mi-content">
+                <span class="section-tag">Tu Aliado Operativo</span>
+                <h2 class="section-title">¿Por qué trabajar conmigo?</h2>
+                <p>
+                    Muchos programadores e implementadores de IA saben mucho sobre líneas de código, pero no entienden la presión de atender pacientes, coordinar secretarias o llevar el control diario de una oficina.
+                </p>
+                <p>
+                    Mi ventaja competitiva es la <strong>experiencia real</strong>. He trabajado por más de 25 años como Subgerente de Logística y Operaciones en entornos de alta complejidad (liderando áreas clave en Claro/VTR). He visto cómo se optimizan miles de procesos diarios y sé exactamente cómo coordinar la tecnología para que no interrumpa tu operación, sino que la potencie.
+                </p>
+                <p>
+                    Mi enfoque con <strong>IAenProceso</strong> es cercano y honesto. Te hablaré en tu idioma, evaluaré lo que realmente necesitas y te acompañaré en cada paso para que tu negocio crezca con seguridad y eficiencia en esta era tecnológica.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diagnóstico Operativo Express (Herramienta Interactiva) -->
+    <section id="diagnostico" class="diagnostico-section section text-dark">
+        <div class="container max-width-md">
+            <div class="section-header centered">
+                <span class="section-tag">Diagnóstico Rápido y Gratuito</span>
+                <h2 class="section-title">¿Qué tan listo está tu negocio para la Inteligencia Artificial?</h2>
+                <p class="section-description">
+                    Responde estas 4 sencillas preguntas y descubre de inmediato por dónde empezar a ganar eficiencia y liberar tiempo en tu día a día.
+                </p>
+            </div>
+
+            <!-- Quiz Wizard Card -->
+            <div class="quiz-card" id="quiz-container">
+                <!-- Barra de Progreso -->
+                <div class="quiz-progress-bar">
+                    <div class="progress-fill" id="quiz-progress-fill" style="width: 25%;"></div>
+                </div>
+                
+                <!-- Contenedor de Preguntas -->
+                <div class="quiz-questions-wrapper">
+                    <!-- Pregunta 1 -->
+                    <div class="quiz-question-slide active" data-step="1">
+                        <span class="question-number">Pregunta 1 de 4</span>
+                        <h3>¿Cómo se agendan actualmente las horas y citas de tus clientes o pacientes?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="1" required>
+                                <span class="option-custom-radio"></span>
+                                <span class="option-text">De forma manual, anotando en un cuaderno, agenda física o planilla Excel.</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="2">
+                                <span class="option-custom-radio"></span>
+                                <span class="option-text">Usamos un software o calendario en línea, pero debemos confirmar y recordar cada hora manualmente.</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="3">
+                                <span class="option-custom-radio"></span>
+                                <span class="option-text">Está 100% automatizado (el sistema agenda, recuerda y confirma solo).</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 2 -->
+                    <div class="quiz-question-slide" data-step="2">
+                        <span class="question-number">Pregunta 2 de 4</span>
+                        <h3>¿Cuánto tiempo dedican tú o tu personal a responder dudas repetitivas?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="1" required>
+                                <span class="option-custom-radio"></span>
+                                <span class="option-text">Varias horas al día (precios, horarios, ubicaciones o indicaciones básicas).</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="2">
+                                <span class="option-custom-radio"></span>
+                                <span class="option-text">Cerca de una hora diaria, pero interrumpe nuestro trabajo constantemente.</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="3">
+                                <span class="option-custom-radio"></span>
+                                <span class="option-text">Casi nada. La información está clara en la web y automatizada.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 3 -->
+                    <div class="quiz-question-slide" data-step="3">
+                        <span class="question-number">Pregunta 3 de 4</span>
+                        <h3>¿Cómo realizas el seguimiento después del servicio (cobranzas, control médico, encuestas de satisfacción)?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="1" required>
+                                <span class="option-custom-radio"></span>
+                                <span class="option-text">Rara vez nos da el tiempo para hacer un seguimiento constante.</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="2">
+                                <span class="option-custom-radio"></span>
+                                <span class="option-text">Lo hacemos de forma manual, escribiendo uno a uno cuando recordamos.</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="3">
+                                <span class="option-custom-radio"></span>
+                                <span class="option-text">Tenemos un sistema automático que envía recordatorios o encuestas solo.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 4 -->
+                    <div class="quiz-question-slide" data-step="4">
+                        <span class="question-number">Pregunta 4 de 4</span>
+                        <h3>¿Dónde guardas la información clave de tu negocio (fichas clínicas, datos de clientes, contratos)?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="1" required>
+                                <span class="option-custom-radio"></span>
+                                <span class="option-text">En fichas de papel, archivadores o archivos sueltos en mi computadora.</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="2">
+                                <span class="option-custom-radio"></span>
+                                <span class="option-text">En la nube (Google Drive o Dropbox) pero de forma manual y desordenada.</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="3">
+                                <span class="option-custom-radio"></span>
+                                <span class="option-text">En un software especializado o base de datos centralizada y ordenada.</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botones de Navegación -->
+                <div class="quiz-navigation">
+                    <button class="btn btn-outline nav-btn-prev" id="quiz-btn-prev" disabled>Atrás</button>
+                    <button class="btn btn-primary nav-btn-next" id="quiz-btn-next">Siguiente</button>
+                </div>
+
+                <!-- Resultados del Diagnóstico (Ocultos inicialmente) -->
+                <div class="quiz-results" id="quiz-results-view" style="display: none;">
+                    <div class="results-header">
+                        <div class="result-badge" id="result-badge-text">Diagnóstico Operativo</div>
+                        <h3 id="result-title">Analizando tus respuestas...</h3>
+                    </div>
+                    <div class="results-content">
+                        <p id="result-description">
+                            Aquí aparecerá el resultado de la evaluación junto con los consejos específicos para optimizar tu consulta o estudio profesional.
+                        </p>
+                        <div class="result-recommendation-box">
+                            <h4>Tu Plan de Acción Recomendado:</h4>
+                            <p id="result-recommendation">Recomendaciones personalizadas...</p>
+                        </div>
+                    </div>
+                    <div class="results-ctas">
+                        <a href="#contacto" class="btn btn-primary">Agendar Sesión de Diagnóstico Gratis</a>
+                        <button class="btn btn-outline" id="quiz-btn-restart">Volver a responder</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Formulario de Contacto -->
+    <section id="contacto" class="contacto-section section bg-light">
+        <div class="container max-width-md">
+            <div class="section-header centered">
+                <span class="section-tag">Hablemos de tu Negocio</span>
+                <h2 class="section-title">¿Listo para dar el primer paso con seguridad?</h2>
+                <p class="section-description">
+                    Escríbeme o llámame. Conversaremos de forma cercana sobre tu operación actual, sin presiones y en un vocabulario simple.
+                </p>
+            </div>
+
+            <div class="contact-wrapper grid-contact">
+                <!-- Información de contacto directo -->
+                <div class="contact-info-panel">
+                    <h3>Contacto Directo</h3>
+                    <p class="info-intro">Soy Patricio Ferrer. Puedes comunicarte directamente conmigo a través de:</p>
+                    
+                    <div class="contact-info-list">
+                        <div class="info-list-item">
+                            <span class="info-icon">✉</span>
+                            <div>
+                                <strong>Correo Electrónico</strong>
+                                <a href="mailto:ferrer.patricio@gmail.com" class="info-link">ferrer.patricio@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="info-list-item">
+                            <span class="info-icon">📞</span>
+                            <div>
+                                <strong>Teléfono / WhatsApp</strong>
+                                <a href="tel:+56990025264" class="info-link">+56 9 9002 5264</a>
+                            </div>
+                        </div>
+                        <div class="info-list-item">
+                            <span class="info-icon">📍</span>
+                            <div>
+                                <strong>Ubicación</strong>
+                                <span>Santiago y V Región, Chile</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario -->
+                <div class="contact-form-panel">
+                    <form id="contact-form" class="clean-form">
+                        <div class="form-group">
+                            <label for="form-name">Tu nombre</label>
+                            <input type="text" id="form-name" name="name" placeholder="Ej: Dra. María José" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="form-email">Correo electrónico</label>
+                                <input type="email" id="form-email" name="email" placeholder="maria@ejemplo.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-phone">Teléfono de contacto</label>
+                                <input type="tel" id="form-phone" name="phone" placeholder="+56 9..." required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-business">Tipo de negocio / profesión</label>
+                            <select id="form-business" name="business" required>
+                                <option value="" disabled selected>Selecciona tu rubro</option>
+                                <option value="dental">Consulta Dental</option>
+                                <option value="estetica">Centro de Estética o Salud</option>
+                                <option value="abogados">Estudio de Abogados</option>
+                                <option value="contadores">Oficina de Contabilidad</option>
+                                <option value="gimnasio">Gimnasio o Estudio Wellness</option>
+                                <option value="otro">Otro negocio de servicios</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-message">¿Cuál es tu principal dolor operativo o duda hoy?</label>
+                            <textarea id="form-message" name="message" rows="4" placeholder="Ej: Pierdo mucho tiempo confirmando horas por WhatsApp..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">Enviar Mensaje</button>
+                    </form>
+                    <!-- Mensaje de éxito del formulario (Oculto inicialmente) -->
+                    <div id="contact-success-msg" class="success-box" style="display: none;">
+                        <span class="success-icon">✓</span>
+                        <h4>¡Mensaje Recibido!</h4>
+                        <p>Gracias por contactarte. Te escribiré personalmente a tu correo o WhatsApp dentro de las próximas 24 horas para coordinar una videollamada corta.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-content text-center">
+            <p class="footer-logo">IAen<span class="text-accent">Proceso</span></p>
+            <p class="footer-text">Consultoría en Gestión de Procesos e IA No-Code para Pequeños Negocios de Alto Valor.</p>
+            <div class="footer-socials">
+                <a href="https://linkedin.com/in/patricioferrer" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
+                <a href="mailto:ferrer.patricio@gmail.com" class="social-link">Email</a>
+            </div>
+            <p class="copyright">&copy; 2026 IAenProceso. Todos los derechos reservados. Diseñado para optimizar tu negocio.</p>
+        </div>
+    </footer>
+
+    <!-- Chatbot Demo Flotante (Simulador interactivo) -->
+    <div class="chatbot-wrapper" id="chatbot-container">
+        <!-- Botón circular flotante -->
+        <button class="chatbot-launcher" id="chatbot-launcher-btn" aria-label="Abrir simulador de chatbot">
+            <span class="launcher-icon">💬</span>
+            <span class="launcher-badge">Demo</span>
+        </button>
+
+        <!-- Ventana de chat -->
+        <div class="chatbot-window" id="chatbot-window-panel">
+            <div class="chatbot-header">
+                <div class="header-avatar">
+                    <span>🤖</span>
+                </div>
+                <div class="header-info">
+                    <h4>Asistente Demo</h4>
+                    <span class="status">En línea (Ejemplo de Voiceflow/Botpress)</span>
+                </div>
+                <button class="chatbot-close-btn" id="chatbot-close-btn" aria-label="Cerrar chat">&times;</button>
+            </div>
+
+            <!-- Cuerpo de mensajes -->
+            <div class="chatbot-body" id="chatbot-message-list">
+                <div class="chat-message bot">
+                    <p>¡Hola! Soy un asistente virtual inteligente similar al que podemos configurar para tu consulta o negocio.</p>
+                </div>
+                <div class="chat-message bot">
+                    <p>Imagina que soy el recepcionista de tu consulta o el asistente de tu estudio. ¿Qué te gustaría que simulemos hoy?</p>
+                </div>
+            </div>
+
+            <!-- Opciones rápidas (Botones) -->
+            <div class="chatbot-options" id="chatbot-options-container">
+                <button class="chat-opt-btn" data-action="agenda">Simular agendamiento de cita</button>
+                <button class="chat-opt-btn" data-action="dudas">Ver respuestas a dudas frecuentes</button>
+                <button class="chat-opt-btn" data-action="contacto">Saber cómo se conecta a WhatsApp</button>
+            </div>
+
+            <!-- Footer del chat -->
+            <div class="chatbot-footer">
+                <input type="text" placeholder="Escribe un mensaje..." disabled class="chatbot-input">
+                <button class="chatbot-send-btn" disabled>➔</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script de interactividad -->
+    <script src="app.js"></script>
+</body>
+</html>
