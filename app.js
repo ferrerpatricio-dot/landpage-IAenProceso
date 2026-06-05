@@ -344,30 +344,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactSuccessMsg = document.getElementById('contact-success-msg');
 
     if (contactForm && contactSuccessMsg) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
-            // Simular carga del botón de envío
+
             const submitBtn = document.getElementById('form-submit-btn');
-            const originalBtnText = submitBtn.textContent;
             submitBtn.disabled = true;
             submitBtn.textContent = 'Enviando...';
 
-            setTimeout(() => {
-                // Simulación exitosa
-                contactForm.style.display = 'none';
-                contactSuccessMsg.style.display = 'block';
-                
-                // Mostrar datos en consola para validación y testing
-                const formData = new FormData(contactForm);
-                console.log('Contacto Recibido:', {
-                    name: formData.get('name'),
-                    email: formData.get('email'),
-                    phone: formData.get('phone'),
-                    business: formData.get('business'),
-                    message: formData.get('message')
+            try {
+                const response = await fetch('https://formspree.io/f/xgoboobk', {
+                    method: 'POST',
+                    body: new FormData(contactForm),
+                    headers: { 'Accept': 'application/json' }
                 });
-            }, 1200);
+
+                if (response.ok) {
+                    contactForm.style.display = 'none';
+                    contactSuccessMsg.style.display = 'block';
+                } else {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Enviar Mensaje';
+                    alert('Hubo un error al enviar. Por favor intenta de nuevo.');
+                }
+            } catch (error) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Enviar Mensaje';
+                alert('Error de conexión. Por favor intenta de nuevo.');
+            }
         });
     }
 
