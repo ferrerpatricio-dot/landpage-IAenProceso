@@ -1,6 +1,29 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
+function fireIntegrations(datos) {
+  const { nombre, telefono, email, empresa, mensaje } = datos;
+  const payload = JSON.stringify({
+    nombre,
+    telefono,
+    email,
+    empresa,
+    mensaje,
+    estado: 'Nuevo',
+    origen: 'Página WEB',
+    responsable_seguimiento: 'No Asignado',
+  });
+
+  const sheetsUrl = process.env.GOOGLE_SHEETS_URL;
+  if (sheetsUrl) {
+    fetch(sheetsUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: payload,
+    }).catch((err) => console.error('Google Sheets error:', err));
+  }
+}
+
 export async function POST(request) {
   try {
     const { nombre, telefono, email, empresa, mensaje } = await request.json();
@@ -17,21 +40,22 @@ export async function POST(request) {
     const smtpHost = process.env.SMTP_HOST || 'smtp.gmail.com';
     const smtpPort = parseInt(process.env.SMTP_PORT || '465');
     const smtpSecure = smtpPort === 465;
-    const smtpUser = process.env.SMTP_USER || 'ferrer.patrixio@gmail.com'; 
-    const smtpPass = process.env.SMTP_PASS; // SMTP Password or App Password
-    
+    const smtpUser = process.env.SMTP_USER || 'ferrer.patrixio@gmail.com';
+    const smtpPass = process.env.SMTP_PASS;
+
     // Recipient Account (as specified by user)
     const emailTo = process.env.EMAIL_TO || 'ferrer.patricio@gmail.com';
 
-    // If there is no SMTP password configured, alert the user but log it
+    // If there is no SMTP password configured, still fire integrations
     if (!smtpPass) {
       console.warn('Advertencia: SMTP_PASS no está configurada en las variables de entorno.');
+      fireIntegrations({ nombre, telefono, email, empresa, mensaje });
       return NextResponse.json(
-        { 
-          success: false, 
-          message: 'El servidor recibió el formulario, pero falta configurar SMTP_PASS en las variables de entorno (.env.local) para realizar el envío real.' 
+        {
+          success: false,
+          message: 'El servidor recibió el formulario, pero falta configurar SMTP_PASS en las variables de entorno (.env.local) para realizar el envío real.'
         },
-        { status: 200 } // Return 200 so the frontend can handle the reminder message gracefully
+        { status: 200 }
       );
     }
 
@@ -54,7 +78,7 @@ export async function POST(request) {
         </div>
         <div style="padding: 20px; color: #1e293b;">
           <p style="font-size: 16px; line-height: 1.5; color: #1e293b;">Se ha recibido una nueva consulta de servicios a través del formulario de la landing page:</p>
-          
+
           <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
             <tr>
               <td style="padding: 8px 0; border-bottom: 1px solid #f1f5f9; font-weight: bold; width: 120px; color: #4A9BA5;">Nombre:</td>
@@ -87,16 +111,17 @@ export async function POST(request) {
 
     // Email Options
     const mailOptions = {
-      from: `"IBRO Web" <${smtpUser}>`, // Send FROM the app account
-      to: emailTo, // Send TO destination account
-      replyTo: email, // Reply goes to user who filled the form
+      from: `"IBRO Web" <${smtpUser}>`,
+      to: emailTo,
+      replyTo: email,
       subject: `Contacto IBRO - ${nombre} (${empresa})`,
       text: `Nuevo mensaje de contacto:\n\nNombre: ${nombre}\nEmpresa: ${empresa}\nEmail: ${email}\nTeléfono: ${telefono || 'No especificado'}\n\nMensaje:\n${mensaje}`,
       html: htmlContent,
     };
 
-    // Send the email
+    // Send email then fire integrations (non-blocking)
     await transporter.sendMail(mailOptions);
+    fireIntegrations({ nombre, telefono, email, empresa, mensaje });
 
     return NextResponse.json({ success: true, message: 'Correo enviado con éxito' }, { status: 200 });
   } catch (error) {

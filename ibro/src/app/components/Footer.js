@@ -40,6 +40,7 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} IBRO. Todos los derechos reservados.</p>
+          <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted, #6b7280)', marginTop: '0.25rem' }}>v1.1.0</p>
         </div>
       </div>
     </footer>
