@@ -19,6 +19,9 @@ Simplificación del flujo de captación de leads: se elimina la dependencia de G
 ### Canal de notificación activo tras este cambio
 - Envío SMTP via `nodemailer` al correo configurado en `EMAIL_TO` (actualmente `ferrer.patricio@gmail.com`).
 
+#### Deploy
+- **Vercel** — Proyecto conectado a GitHub (`ferrerpatricio-dot/landpage-IAenProceso`, root: `ibro`). Deploy automático activado desde branch `main`. Variables de entorno SMTP configuradas en Vercel dashboard.
+
 ---
 
 ## [1.1.0] — anterior
