@@ -17,7 +17,7 @@ export async function POST(request) {
     const smtpSecure = smtpPort === 465;
     const smtpUser = process.env.SMTP_USER || 'ferrer.patrixio@gmail.com';
     const smtpPass = process.env.SMTP_PASS;
-    const emailTo = process.env.EMAIL_TO || 'ferrer.patricio@gmail.com';
+    const emailTo = process.env.EMAIL_TO || 'ferrer.patrixio@gmail.com';
 
     if (!smtpPass) {
       console.warn('Advertencia: SMTP_PASS no está configurada en las variables de entorno.');
