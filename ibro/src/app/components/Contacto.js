@@ -148,7 +148,8 @@ export default function Contacto() {
                   <>
                     <h3>¡Mensaje enviado con éxito!</h3>
                     <p style={{ marginBottom: '1.5rem' }}>
-                      Tu consulta ha sido enviada de manera directa desde la aplicación a <strong>ferrer.patrixio@gmail.com</strong>.
+                      Tu consulta ha sido enviada de manera directa a <strong>{formData.email || 'tu correo corporativo'}</strong>.
+                      Nos comunicaremos contigo a la brevedad.
                       Nos comunicaremos contigo a la brevedad.
                     </p>
                   </>
