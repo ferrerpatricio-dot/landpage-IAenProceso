@@ -21,6 +21,7 @@ Simplificación del flujo de captación de leads: se elimina la dependencia de G
 
 #### Deploy
 - **Vercel** — Proyecto conectado a GitHub (`ferrerpatricio-dot/landpage-IAenProceso`, root: `ibro`). Deploy automático activado desde branch `main`. Variables de entorno SMTP configuradas en Vercel dashboard.
+- **Git user.email** corregido a `ferrer.patrixio@gmail.com` para matching con cuenta GitHub/Vercel.
 
 ---
 
